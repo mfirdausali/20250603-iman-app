@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen font-sans text-slate-900;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure Scheherazade New loads properly */
+  @font-face {
+    font-family: 'Scheherazade New';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Scheherazade New'), local('ScheherazadeNew-Regular'), 
+         url('https://fonts.gstatic.com/s/scheherazadenew/v5/4UaZrFhTv0EqnvlpVLFaIX6RWy58yGMGm.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+  }
+
+  @font-face {
+    font-family: 'Scheherazade New';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Scheherazade New Bold'), local('ScheherazadeNew-Bold'), 
+         url('https://fonts.gstatic.com/s/scheherazadenew/v5/4UaerFhTv0EqnvlpVLFaIX6RYwsGlyx8D_o.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+  }
+}
+
+@layer components {
+  .arabic-text {
+    font-family: 'Scheherazade New', 'Amiri', 'Traditional Arabic', serif !important;
+    @apply text-center;
+    direction: rtl;
+    font-feature-settings: 'liga' on, 'calt' on, 'kern' on;
+    line-height: 4rem !important;
+    font-size: 1.875rem; /* 30px */
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Specific Arabic text sizes for different contexts */
+  .arabic-text-lg {
+    font-family: 'Scheherazade New', 'Amiri', 'Traditional Arabic', serif !important;
+    direction: rtl;
+    font-feature-settings: 'liga' on, 'calt' on, 'kern' on;
+    font-size: 1.5rem; /* 24px */
+    line-height: 3rem;
+    text-rendering: optimizeLegibility;
+  }
+
+  .arabic-text-xl {
+    font-family: 'Scheherazade New', 'Amiri', 'Traditional Arabic', serif !important;
+    direction: rtl;
+    font-feature-settings: 'liga' on, 'calt' on, 'kern' on;
+    font-size: 1.875rem; /* 30px */
+    line-height: 3.5rem;
+    text-rendering: optimizeLegibility;
+  }
+
+  .arabic-text-2xl {
+    font-family: 'Scheherazade New', 'Amiri', 'Traditional Arabic', serif !important;
+    direction: rtl;
+    font-feature-settings: 'liga' on, 'calt' on, 'kern' on;
+    font-size: 2.25rem; /* 36px */
+    line-height: 4rem;
+    text-rendering: optimizeLegibility;
+  }
+
+  .arabic-text-3xl {
+    font-family: 'Scheherazade New', 'Amiri', 'Traditional Arabic', serif !important;
+    direction: rtl;
+    font-feature-settings: 'liga' on, 'calt' on, 'kern' on;
+    font-size: 2.875rem; /* 46px */
+    line-height: 4.5rem;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl shadow-black/5;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-slate-700 border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .btn-success {
+    @apply bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5;
+  }
+  
+  .btn-warning {
+    @apply bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5;
+  }
+  
+  .progress-ring {
+    @apply transition-all duration-500 ease-out;
+    transform-origin: 50% 50%;
+  }
+  
+  .hidden-text {
+    @apply select-none cursor-pointer bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 bg-[length:200%_100%] animate-shimmer text-transparent rounded-md;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
+  .peek-text {
+    @apply text-slate-800 bg-yellow-100/50 rounded-md transition-all duration-300;
+  }
+  
+  .nav-item {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-white/50 transition-all duration-200 relative;
+  }
+  
+  .nav-item.active {
+    @apply text-primary-700 bg-white shadow-sm;
+  }
+  
+  .nav-item.active::after {
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-0.5 bg-primary-500 rounded-full;
+    content: '';
+  }
+}
